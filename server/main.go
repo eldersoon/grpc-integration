@@ -1,8 +1,8 @@
 /*
 	protoc -I=proto 38tao.proto --js_out=import_style=commonjs:../client/grpc --grpc-web_out=import_style=commonjs,mode=grpcwebtext:../client/grpc
 
-
     =================================================================================
+
     protoc -I=proto 38tao.proto --js_out=import_style=commonjs:./client/src --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./client/src
 
 
@@ -10,6 +10,8 @@
 
     go build -o ${BIN_DIR}/$@/${SERVER_BIN} ./$@/${SERVER_DIR}
 	go build -o ${BIN_DIR}/$@/${CLIENT_BIN} ./$@/${CLIENT_DIR
+
+    grpcwebproxy.exe --backend_addr=localhost:50051 --run_tls_server=false --allow_all_origins
 
 */
 

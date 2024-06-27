@@ -16,14 +16,12 @@ export default function Home() {
     request.setAmount(amount);
 
     await client.getBTC(request, {}, (err, response) => {
-      console.log("????");
       if (err) {
         console.error(err);
       } else {
         setReply(response.getMessage());
       }
     });
-    console.log("????");
   };
 
   return (
